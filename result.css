@@ -1,0 +1,58 @@
+/* Result Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e0c3fc, #8e44ad); /* Purple gradient background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.result-container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.result-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.result-container p {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.result-container .retry-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.result-container .retry-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
