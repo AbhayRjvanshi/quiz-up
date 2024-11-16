@@ -1,41 +1,44 @@
 /* Global Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    background-color: #f4f6f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
-    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
 /* Landing Page */
 .landing-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 90%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
     max-width: 400px;
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    animation: fadeIn 1s ease-in-out; /* Animation for landing page */
+    transition: transform 0.3s ease;
+}
+
+.landing-container:hover {
+    transform: scale(1.05);
 }
 
 .landing-container h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-    font-weight: 700;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Container */
 .button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
@@ -44,61 +47,66 @@ body {
     color: white;
     background-color: #007bff;
     padding: 12px 25px;
-    border-radius: 8px;
+    border-radius: 50px;
     font-size: 18px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
     background-color: #0056b3;
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    transform: translateY(-3px);
 }
 
 /* Form Pages */
 .form-page-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.9); /* Lighter background */
-    padding: 40px;
+    background: #ffffff;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    width: 90%;
-    max-width: 400px;
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
 }
 
-/* Form Elements */
+.form-page-container:hover {
+    transform: scale(1.03);
+}
+
 form {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
 }
 
 input {
     width: 100%;
-    padding: 12px;
+    padding: 12px 15px;
     margin-bottom: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
-    background-color: #fff;
+    transition: all 0.3s ease;
 }
 
 input:focus {
-    border-color: #007bff; /* Blue border on focus */
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
     outline: none;
 }
 
-/* Submit Button */
 button {
     width: 100%;
     padding: 12px;
@@ -106,48 +114,123 @@ button {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #218838;
-    transform: scale(1.05); /* Slight scale effect */
+    transform: translateY(-3px);
 }
 
-/* Responsive Design for Mobile */
+/* Quiz Page */
+.quiz-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.quiz-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.quiz-container label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.quiz-container input[type="radio"] {
+    margin-right: 10px;
+}
+
+.quiz-container .question {
+    margin-bottom: 20px;
+}
+
+.quiz-container button {
+    background-color: #007bff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Result Page */
+.result-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.result-container h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.result-container p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.result-container .score {
+    font-size: 36px;
+    color: #28a745;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.result-container button {
+    background-color: #28a745;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.result-container button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .landing-container {
-        padding: 25px;
-        width: 90%;
+    body {
+        padding: 20px;
     }
 
-    .form-page-container {
-        padding: 30px;
-        width: 90%;
+    .landing-container, .form-page-container, .quiz-container, .result-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .button-container {
+        flex-direction: column;
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 16px;
+        width: 100%;
+        margin-bottom: 15px;
     }
 
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    .quiz-container button {
+        width: 100%;
     }
 }
